@@ -1,0 +1,18 @@
+{
+  "name": "nexora-platform",
+  "version": "1.0.0",
+  "private": true,
+  "description": "NEXORA – Scalable Full-Stack E-Commerce SaaS Platform",
+  "scripts": {
+    "dev": "npm run dev:all",
+    "dev:server": "npm --prefix server run dev",
+    "dev:client": "npm --prefix client run dev",
+    "dev:all": "npx concurrently -k -p \"[{name}]\" -n \"SERVER,CLIENT\" -c \"magenta.bold,cyan.bold\" \"npm --prefix server run dev\" \"npm --prefix client run dev\"",
+    "build": "npm --prefix server run build && npm --prefix client run build",
+    "seed": "npm --prefix server run seed",
+    "test": "npm --prefix server run test"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
